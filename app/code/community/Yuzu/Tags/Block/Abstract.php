@@ -25,8 +25,22 @@ abstract class Yuzu_Tags_Block_Abstract extends Mage_Core_Block_Template
         return Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/monetize');
     }
 
+    public function isInEmail()
+    {
+        return Mage::helper('yuzu_tags')->getConfig('yuzu_tags/advanced/in_email');
+    }
+
     public function getApiUrl()
     {
         return Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/tag_url_collect');
+    }
+
+    public function readyInEmail()
+    {
+        if ($this->isEnabled() && $this->getMerchantKey() && $this->isMonetize() && $this->isInEmail()) {
+            return true;
+        }
+
+        return false;
     }
 }

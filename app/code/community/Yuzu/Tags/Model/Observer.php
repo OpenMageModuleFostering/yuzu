@@ -22,17 +22,6 @@ class Yuzu_Tags_Model_Observer
             $this->getOrCreateUser($roleId, $secretKey);
         }
 
-        $enable = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/enable');
-        $apiKey = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/merchant_key');
-        $monetize = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/monetize');
-        $inEmail = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/advanced/in_email');
-
-        if ($enable && $apiKey && $monetize && $inEmail) {
-            Mage::helper('yuzu_tags')->setConfig('yuzu_tags/advanced/ready_in_email', true);
-        } else {
-            Mage::helper('yuzu_tags')->setConfig('yuzu_tags/advanced/ready_in_email', false);
-        }
-
         $this->sendPing();
     }
 

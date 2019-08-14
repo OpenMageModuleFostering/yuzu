@@ -27,24 +27,24 @@
     <sales_email_order_items>
         <block type="yuzu_tags/email" name="yuzu_offers" template="yuzu_tags/email/offers.phtml"/>
         <reference name="items">
-            <action method="setTemplate" ifconfig="yuzu_tags/advanced/ready_in_email"><template>yuzu_tags/email/order/items.phtml</template></action>
-            <action method="append" ifconfig="yuzu_tags/advanced/ready_in_email"><block>yuzu_offers</block></action>
+            <action method="setTemplate" ifconfig="yuzu_tags/advanced/in_email"><template>yuzu_tags/email/order/items.phtml</template></action>
+            <action method="append" ifconfig="yuzu_tags/advanced/in_email"><block>yuzu_offers</block></action>
         </reference>
     </sales_email_order_items>
 
     <sales_email_order_invoice_items>
         <block type="yuzu_tags/email" name="yuzu_offers" template="yuzu_tags/email/offers.phtml"/>
         <reference name="items">
-            <action method="setTemplate" ifconfig="yuzu_tags/advanced/ready_in_email"><template>yuzu_tags/email/invoice/items.phtml</template></action>
-            <action method="append" ifconfig="yuzu_tags/advanced/ready_in_email"><block>yuzu_offers</block></action>
+            <action method="setTemplate" ifconfig="yuzu_tags/advanced/in_email"><template>yuzu_tags/email/invoice/items.phtml</template></action>
+            <action method="append" ifconfig="yuzu_tags/advanced/in_email"><block>yuzu_offers</block></action>
         </reference>
     </sales_email_order_invoice_items>
 
     <sales_email_order_shipment_items>
         <block type="yuzu_tags/email" name="yuzu_offers" template="yuzu_tags/email/offers.phtml"/>
         <reference name="items">
-            <action method="setTemplate" ifconfig="yuzu_tags/advanced/ready_in_email"><template>yuzu_tags/email/shipment/items.phtml</template></action>
-            <action method="append" ifconfig="yuzu_tags/advanced/ready_in_email"><block>yuzu_offers</block></action>
+            <action method="setTemplate" ifconfig="yuzu_tags/advanced/in_email"><template>yuzu_tags/email/shipment/items.phtml</template></action>
+            <action method="append" ifconfig="yuzu_tags/advanced/in_email"><block>yuzu_offers</block></action>
         </reference>
     </sales_email_order_shipment_items>
 	

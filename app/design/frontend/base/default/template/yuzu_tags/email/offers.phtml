@@ -3,7 +3,8 @@
 <?php $customerId = ($_order->getCustomerId()) ? $_order->getCustomerId() : 0; ?>
 <?php $urlLink =  $this->getBaseUrl().DS."click".DS.$this->getMerchantKey().DS.$customerId.DS.$_order->getIncrementId();?>
 <?php $imgLink =  $this->getBaseUrl().DS."ban".DS.$this->getMerchantKey().DS.$customerId.DS.$_order->getIncrementId();?>
-<?php if ($_order): ?>
+
+<?php if ($_order && $this->readyInEmail()): ?>
     <tr>
         <td colspan="8" align="center" style="padding: 10px;">
             <a href="<?php echo $urlLink.DS."0";?>">
