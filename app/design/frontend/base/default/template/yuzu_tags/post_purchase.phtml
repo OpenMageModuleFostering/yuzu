@@ -1,0 +1,4 @@
+<?php if ($this->isEnabled()): ?>
+    <?php $_order = Mage::registry('current_order'); ?>
+    <div id="yuzuwrap" data-zone="order_view" data-customer="<?php echo $_order->getCustomerId(); ?>" data-order="<?php echo $_order->getIncrementId(); ?>"></div>
+<?php endif; ?>

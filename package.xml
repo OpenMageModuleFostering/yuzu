@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>yuzu</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://www.yuzu.co">Custom licence</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Yuzu</summary>
+    <description>Yuzu</description>
+    <notes>Official Yuzu plugin for Magento</notes>
+    <authors><author><name>Jonathan Martin</name><user>jmartin</user><email>jonathan@yuzu.co</email></author></authors>
+    <date>2015-02-09</date>
+    <time>17:25:53</time>
+    <contents><target name="magecommunity"><dir name="Yuzu"><dir name="Tags"><dir name="Block"><file name="Abstract.php" hash="1f88a40352e1b0192a4e8a9835ca79ad"/><file name="Checkout.php" hash="a52c4c134ea9d0c3818c79f34f5c013e"/><file name="Email.php" hash="472fb0038d3d8171b8209ca76018b4ef"/><file name="Tags.php" hash="9803f9d837bed1e3da7c4b42b3996f89"/></dir><dir name="Helper"><file name="Data.php" hash="77f09db03a5aae09be0e9cc801ebd412"/></dir><dir name="Model"><file name="Data.php" hash="38a8a695ca9a61a2160dd2ea48cc6b6d"/><file name="Event.php" hash="192c6918f478d676d3260de461501d82"/><file name="Feed.php" hash="40278b4837036fcd88641af6d2888fee"/><file name="Notifier.php" hash="beaa0f9aa9bcccb7e6402740c460d4ae"/><file name="Observer.php" hash="a9038e22f48354c5b1a6f706f7e993db"/><dir name="System"><dir name="Config"><dir name="Source"><file name="Nb.php" hash="1e1bf27b4749a2f3caa9bed5c45c7bf7"/></dir></dir></dir></dir><dir name="controllers"><file name="CheckController.php" hash="aeb20ad798dfa91cb5168e56a8a98cd4"/></dir><dir name="etc"><file name="adminhtml.xml" hash="1402ebcefa884063791db10144f314a3"/><file name="config.xml" hash="a75571aec0220df574846236e102ce84"/><file name="system.xml" hash="71eedce33809fcb50ff760c5a59ef43a"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="yuzu_tags.xml" hash="41a0c1814174885fd3d21eaf0612fe9e"/></dir><dir name="template"><dir name="yuzu_tags"><file name="async_tag.phtml" hash="6d64dc98d0886411a7833de6e9a76ccf"/><dir><dir name="email"><dir name="invoice"><file name="items.phtml" hash="a69e17038115272fc4b1f2f7318f7c35"/></dir><file name="offers.phtml" hash="83ad1604a5d6029af17083f0ff3ddaa0"/><dir name="order"><file name="items.phtml" hash="7e604a8b4b29183499f2673d28daba55"/></dir><dir name="shipment"><file name="items.phtml" hash="997065e2d6a6fec7704c99a743521731"/></dir></dir></dir><file name="event.phtml" hash="04de9167cd5165aff94d86e1df0c33af"/><file name="iframewrap.phtml" hash="8d0c1cf0ef68b8262cb3ac96d2359776"/><file name="init.phtml" hash="c13aad83caeec260587c16a8ff0c71de"/><file name="post_purchase.phtml" hash="6e95f079b990cde565931a02cfe5e98b"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Yuzu_Tags.xml" hash="966c25c3c7f93c697b07295201bb460c"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>5.6.0</max></php></required></dependencies>
+</package>

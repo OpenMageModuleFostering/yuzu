@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/yuzu",
+    "type": "magento-module",
+    "license": "Custom-licence",
+    "homepage": "",
+    "description": "Yuzu",
+    "authors": [
+    {
+        "name": "Jonathan Martin",
+        "email": "jonathan@yuzu.co"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

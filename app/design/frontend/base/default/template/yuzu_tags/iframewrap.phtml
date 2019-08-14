@@ -1,0 +1,12 @@
+<?php if ($this->isEnabled()): ?>
+
+    <?php $event = $this->getEvent(); ?>
+
+	<?php if ($event): ?>
+		<div id="yuzuwrap"></div>
+        <script type="text/javascript">
+           Yuzu.addEvent("order", <?php echo $event; ?>);
+        </script>
+    <?php endif; ?>
+    
+<?php endif; ?>

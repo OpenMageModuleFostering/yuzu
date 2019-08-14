@@ -1,0 +1,83 @@
+<?php $helper = Mage::helper('yuzu_tags'); ?>
+
+<?php if ($this->isEnabled()): ?>
+
+    <?php $event = $this->getEvent(); ?>
+    <?php $user = $this->getUser(); ?>
+    <?php $l10n = $this->getContext(); ?>
+
+    <script type="text/javascript">
+        Yuzu.setL10n(<?php echo $l10n; ?>);
+        <?php if ($user): ?>
+        Yuzu.setCustomerId("<?php echo $user->getId(); ?>");
+        <?php endif; ?>
+    </script>
+
+    <?php if ($event): ?>
+        <script type="text/javascript">
+           Yuzu.addEvent("<?php echo $this->getEvent(); ?>", <?php echo $this->getDatas(); ?>);
+        </script>
+    <?php endif; ?>
+
+    <?php if ($this->hasEventsAction()) : ?>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/sizzle/1.10.19/sizzle.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            var yuzuAddToCart = function(){
+                var form = Sizzle('<?php echo $helper->getConfig('yuzu_tags/general/product_addcart_form_selector'); ?>');
+                var url = form[0].getAttribute('action');
+                var matches = url.match('\/product\/([0-9]+)\/');
+                var data = {
+                    productId: matches[1]
+                };
+                yuzuAddGeneric(data, 'add-basket');
+            };
+
+            var yuzuAddToWishlist = function(event) {
+                var url = event.currentTarget.getAttribute('href');
+                var matches = url.match('\/product\/([0-9]+)\/');
+                var data = {
+                    productId: matches[1]
+                };
+
+                yuzuAddGeneric(data, 'add-wishlist');
+            };
+
+            var yuzuAddToCompare = function(event) {
+                var url = event.currentTarget.getAttribute('href');
+                var matches = url.match('\/product\/([0-9]+)\/');
+                var data = {
+                    productId: matches[1]
+                };
+
+                yuzuAddGeneric(data, 'add-compare');
+            };
+
+            var yuzuAddGeneric = function(data, action) {
+                if (typeof Yuzu != "undefined"){
+                    Yuzu.addEvent('product', data, action)
+                }
+            };
+
+            var yuzuLoadCallback = function() {
+                var ele = Sizzle('<?php echo $helper->getConfig('yuzu_tags/general/product_addcart_button_selector'); ?>');
+                if (ele.length > 0){
+                    addEvent(ele[0], 'click', yuzuAddToCart);
+                }
+
+                var ele2 = Sizzle('<?php echo $helper->getConfig('yuzu_tags/general/product_addwishlist_button_selector'); ?>');
+                if (ele2.length > 0){
+                    addEvent(ele2[0], 'click', yuzuAddToWishlist);
+                }
+
+                var ele3 = Sizzle('<?php echo $helper->getConfig('yuzu_tags/general/product_addcompare_button_selector'); ?>');
+                if (ele3.length > 0){
+                    addEvent(ele3[0], 'click', yuzuAddToCompare);
+                }
+            };
+            addEvent(window, 'load', yuzuLoadCallback);
+        })();
+    </script>
+    <?php endif; ?>
+
+<?php endif; ?>

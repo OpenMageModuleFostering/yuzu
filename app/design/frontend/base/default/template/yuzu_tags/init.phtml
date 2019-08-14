@@ -1,0 +1,10 @@
+<?php if ($this->isEnabled()): ?>
+<script type="text/javascript">
+(function(){
+    Yuzu.configure({
+        merchantKey: "<?php echo $this->getMerchantKey(); ?>",
+        yuzuUrl: "<?php echo $this->getApiUrl(); ?>"
+    });
+})();
+</script>
+<?php endif; ?>

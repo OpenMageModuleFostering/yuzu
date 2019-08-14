@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <yuzu translate="label" module="yuzu_tags">
+            <label>Yuzu</label>
+            <sort_order>600</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+        </yuzu>
+    </tabs>
+    <sections>
+        <yuzu_tags translate="label" module="yuzu_tags">
+            <label>Yuzu API</label>
+            <tab>yuzu</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <comment>&lt;div style='background-color: none;margin-bottom: 10px;'&gt; &lt;img style='width: 205px;' src='http://www.yuzu.co/img/yuzu-logo@2x.png' /&gt;  &lt;/div&gt; &lt;u&gt;Contact your account manager for support if you have questions on the fields below.&lt;/u&gt;</comment>
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <comment>
+                                <![CDATA[<span class="notice">Enable/Disable this plugin</span>]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <merchant_key translate="label">
+                            <label>Yuzu Api Key</label>
+                            <comment>
+                                <![CDATA[<span class="notice">Don't have your API key yet? <br/><strong><a href="https://my.yuzu.co/register?from=magento" target="_blank">Create your Yuzu account in minutes!</a></strong></span>]]>
+                            </comment>
+                            <tooltip>Your Yuzu Api Key provided in my.yuzu.co</tooltip>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </merchant_key>
+                        <secret_key translate="label">
+                            <label>Yuzu Secret Key</label>
+                            <tooltip>Your Yuzu Secret Key provided in my.yuzu.co</tooltip>
+                            <frontend_type>password</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </secret_key>
+
+                    </fields>
+                </general>
+                <offers>
+                    <label>Display offers</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <in_checkout translate="label">
+                            <label>Display in checkout success</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </in_checkout>
+                        <in_order_detail translate="label">
+                            <label>Display in order show</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </in_order_detail>
+                        <in_email_confirmation_order translate="label">
+                            <label>Display in order confirmation email</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </in_email_confirmation_order>
+                        <in_email_invoice translate="label">
+                            <label>Display in invoice email</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </in_email_invoice>
+                        <in_email_shipment translate="label">
+                            <label>Display in shipment email</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </in_email_shipment>
+                        <nb translate="label">
+                            <label>Nb offers to display in emails</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>yuzu_tags/system_config_source_nb</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </nb>
+                    </fields>
+                </offers>
+                <events>
+                    <label>Tag selectors</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <product_addcart_form_selector translate="label">
+                            <label>Product - "Add To cart" form css selector</label>
+                            <comment>
+                                <![CDATA[<span class="notice">Product Page - "Add to cart" form css selector</span>]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_addcart_form_selector>
+                        <product_addcart_button_selector translate="label">
+                            <label>Product - "Add To cart" button css selector</label>
+                            <comment>
+                                <![CDATA[<span class="notice">Product Page - "Add to cart" button css selector</span>]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_addcart_button_selector>
+                        <product_addwishlist_button_selector translate="label">
+                            <label>Product - "Add To wishlist" button css selector</label>
+                            <comment>
+                                <![CDATA[<span class="notice">Product Page - "Add to wishlist" button css selector</span>]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_addwishlist_button_selector>
+                        <product_addcompare_button_selector translate="label">
+                            <label>Product - "Add To compare" button css selector</label>
+                            <comment>
+                                <![CDATA[<span class="notice">Product Page - "Add to compare" button css selector</span>]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_addcompare_button_selector>
+                    </fields>
+                </events>
+            </groups>
+        </yuzu_tags>
+    </sections>
+</config>

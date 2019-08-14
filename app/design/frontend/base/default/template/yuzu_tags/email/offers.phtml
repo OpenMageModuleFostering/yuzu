@@ -1,0 +1,26 @@
+<?php $_order = $this->getOrder() ?>
+<?php $totalOffers = $this->getMaxOffers(); ?>
+<?php $customerId = ($_order->getCustomerId()) ? $_order->getCustomerId() : 0; ?>
+<?php $urlLink =  $this->getBaseUrl().DS."click".DS.$this->getMerchantKey().DS.$customerId.DS.$_order->getIncrementId();?>
+<?php $imgLink =  $this->getBaseUrl().DS."ban".DS.$this->getMerchantKey().DS.$customerId.DS.$_order->getIncrementId();?>
+<?php if ($_order): ?>
+    <tr>
+        <td colspan="8" align="center" style="padding: 10px;">
+            <a href="<?php echo $urlLink.DS."0";?>">
+                <img src="<?php echo $imgLink.DS."0.png"; ?>" alt="offer 0"/>
+            </a>
+            <table cellspacing="0" cellpadding="0" style="width: 100%; margin-top: 10px;">
+                <tr>
+                    <?php for($i=1; $i <= $totalOffers; $i++ ) : ?>
+                    <td align="center">
+                        <a href="<?php echo $urlLink.DS.$i;?>">
+                            <img src="<?php echo $imgLink.DS.$i.".png"; ?>" alt="offer <?php echo $i; ?>"/>
+                        </a>
+                    </td>
+                    <?php if($i%2 == 0 && $i < $totalOffers): ?></tr><tr><?php endif; ?>
+                    <?php endfor; ?>
+                </tr>
+            </table>
+        </td>
+    </tr>
+<?php endif; ?>
