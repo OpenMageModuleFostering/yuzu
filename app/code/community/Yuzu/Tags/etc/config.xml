@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Yuzu_Tags>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
         </Yuzu_Tags>
     </modules>
 
@@ -71,7 +71,7 @@
 	    <yuzu_tags>
             <feed_url>my.yuzu.co/mage-notifications.rss</feed_url>
 	        <general>
-                <tag_url_js>//cs.yuzu.co/js/collect/yuzu-latest.js</tag_url_js>
+                <tag_url_js>//static.yuzu.co/yuzu-latest.js</tag_url_js>
                 <tag_url_collect>//cs.yuzu.co</tag_url_collect>
                 <enable>0</enable>
                 <monetize>1</monetize>
