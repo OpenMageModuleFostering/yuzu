@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Yuzu_Tags>
-            <version>1.0.6</version>
+            <version>1.0.7</version>
         </Yuzu_Tags>
     </modules>
 
@@ -76,6 +76,9 @@
                 <enable>0</enable>
                 <monetize>1</monetize>
 	        </general>
+            <offers>
+                <nb>4</nb>
+            </offers>
             <advanced>
                 <in_email>1</in_email>
                 <ready_in_email>0</ready_in_email>
