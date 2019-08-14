@@ -5,7 +5,6 @@
  *
  * @category    Yuzu
  * @package     Yuzu_Tags
- * @version     1.0.0
  * @copyright   Copyright (c) 2015 Yuzu (http://www.yuzu.co)
  * @author      Jonathan Martin <jonathan@yuzu.co>
  */
