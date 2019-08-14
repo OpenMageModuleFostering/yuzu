@@ -1,7 +1,7 @@
 <layout version="0.1.0">
 
     <default>
-        <reference name="head">
+        <reference name="head">    
             <block type="yuzu_tags/tags" template="yuzu_tags/async_tag.phtml"/>
         </reference>
         <reference name="after_body_start">
@@ -13,38 +13,38 @@
     <sales_order_view>
         <block type="yuzu_tags/checkout" name="yuzu_post_purchase" template="yuzu_tags/post_purchase.phtml"/>
         <reference name="my.account.wrapper">
-            <action method="append" ifconfig="yuzu_tags/offers/in_order_detail"><block>yuzu_post_purchase</block></action>
+            <action method="append" ifconfig="yuzu_tags/general/monetize"><block>yuzu_post_purchase</block></action>
         </reference>
     </sales_order_view>
 
     <checkout_onepage_success>
         <block type="yuzu_tags/checkout" name="yuzu_wrap" template="yuzu_tags/iframewrap.phtml"/>
         <reference name="content">
-            <action method="append" ifconfig="yuzu_tags/offers/in_checkout"><block>yuzu_wrap</block></action>
+            <action method="append" ifconfig="yuzu_tags/general/monetize"><block>yuzu_wrap</block></action>
         </reference>
     </checkout_onepage_success>
 
     <sales_email_order_items>
         <block type="yuzu_tags/email" name="yuzu_offers" template="yuzu_tags/email/offers.phtml"/>
         <reference name="items">
-            <action method="setTemplate" ifconfig="yuzu_tags/offers/in_email_confirmation_order"><template>yuzu_tags/email/order/items.phtml</template></action>
-            <action method="append" ifconfig="yuzu_tags/offers/in_email_confirmation_order"><block>yuzu_offers</block></action>
+            <action method="setTemplate" ifconfig="yuzu_tags/advanced/ready_in_email"><template>yuzu_tags/email/order/items.phtml</template></action>
+            <action method="append" ifconfig="yuzu_tags/advanced/ready_in_email"><block>yuzu_offers</block></action>
         </reference>
     </sales_email_order_items>
 
     <sales_email_order_invoice_items>
         <block type="yuzu_tags/email" name="yuzu_offers" template="yuzu_tags/email/offers.phtml"/>
         <reference name="items">
-            <action method="setTemplate" ifconfig="yuzu_tags/offers/in_email_invoice"><template>yuzu_tags/email/invoice/items.phtml</template></action>
-            <action method="append" ifconfig="yuzu_tags/offers/in_email_invoice"><block>yuzu_offers</block></action>
+            <action method="setTemplate" ifconfig="yuzu_tags/advanced/ready_in_email"><template>yuzu_tags/email/invoice/items.phtml</template></action>
+            <action method="append" ifconfig="yuzu_tags/advanced/ready_in_email"><block>yuzu_offers</block></action>
         </reference>
     </sales_email_order_invoice_items>
 
     <sales_email_order_shipment_items>
         <block type="yuzu_tags/email" name="yuzu_offers" template="yuzu_tags/email/offers.phtml"/>
         <reference name="items">
-            <action method="setTemplate" ifconfig="yuzu_tags/offers/in_email_shipment"><template>yuzu_tags/email/shipment/items.phtml</template></action>
-            <action method="append" ifconfig="yuzu_tags/offers/in_email_shipment"><block>yuzu_offers</block></action>
+            <action method="setTemplate" ifconfig="yuzu_tags/advanced/ready_in_email"><template>yuzu_tags/email/shipment/items.phtml</template></action>
+            <action method="append" ifconfig="yuzu_tags/advanced/ready_in_email"><block>yuzu_offers</block></action>
         </reference>
     </sales_email_order_shipment_items>
 	

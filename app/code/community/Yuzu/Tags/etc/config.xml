@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Yuzu_Tags>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
         </Yuzu_Tags>
     </modules>
 
@@ -71,18 +71,15 @@
 	    <yuzu_tags>
             <feed_url>my.yuzu.co/mage-notifications.rss</feed_url>
 	        <general>
-                <tag_url_js>//cs.yuzu.co/js/collect/yuzu-0.0.3.js</tag_url_js>
+                <tag_url_js>//cs.yuzu.co/js/collect/yuzu-latest.js</tag_url_js>
                 <tag_url_collect>//cs.yuzu.co</tag_url_collect>
                 <enable>0</enable>
+                <monetize>1</monetize>
 	        </general>
-            <offers>
-                <nb>4</nb>
-                <in_checkout>1</in_checkout>
-                <in_order_detail>1</in_order_detail>
-                <in_email_confirmation_order>1</in_email_confirmation_order>
-                <in_email_invoice>1</in_email_invoice>
-                <in_email_shipment>1</in_email_shipment>
-            </offers>
+            <advanced>
+                <in_email>1</in_email>
+                <ready_in_email>0</ready_in_email>
+            </advanced>
             <events>
                 <product_addcart_form_selector>#product_addtocart_form</product_addcart_form_selector>
                 <product_addcart_button_selector>#product_addtocart_form .add-to-cart-buttons button</product_addcart_button_selector>

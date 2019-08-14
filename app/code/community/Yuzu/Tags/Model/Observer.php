@@ -21,6 +21,40 @@ class Yuzu_Tags_Model_Observer
             $roleId = $this->getOrCreateRole();
             $this->getOrCreateUser($roleId, $secretKey);
         }
+
+        $enable = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/enable');
+        $apiKey = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/merchant_key');
+        $monetize = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/monetize');
+        $inEmail = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/advanced/in_email');
+
+        if ($enable && $apiKey && $monetize && $inEmail) {
+            Mage::helper('yuzu_tags')->setConfig('yuzu_tags/advanced/ready_in_email', true);
+        } else {
+            Mage::helper('yuzu_tags')->setConfig('yuzu_tags/advanced/ready_in_email', false);
+        }
+
+        $this->sendPing();
+    }
+
+    private function sendPing()
+    {
+        try {
+
+            $iClient = new Varien_Http_Client();
+            $iClient->setUri('https://my.yuzu.co/embed/magento/ping')
+                     ->setMethod('POST')
+                     ->setConfig(array(
+                            'maxredirects'=>0,
+                            'timeout'=>30,
+                    ));
+            $iClient->setRawData(json_encode(array(
+                "url" => Mage::getBaseUrl(),
+                "email" => Mage::getStoreConfig('trans_email/ident_general/email')
+                )), "application/json;charset=UTF-8");    
+            $response = $iClient->request();
+        } catch(\Exception $e) {
+
+        }
     }
 
     /**

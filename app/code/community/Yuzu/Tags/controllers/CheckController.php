@@ -16,11 +16,8 @@ class Yuzu_Tags_CheckController extends Mage_Core_Controller_Front_Action
         $merchantKey = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/merchant_key');
         $secretKey = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/secret_key');
         $enabled = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/enable');
-        $inCheckout = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/offers/in_checkout');
-        $inOrderDetail = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/offers/in_order_detail');
-        $emailOrder = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/offers/in_email_confirmation_order');
-        $emailInvoice = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/offers/in_email_invoice');
-        $emailShipment = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/offers/in_email_shipment');
+        $monetize = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/monetize');
+        $inEmail = Mage::helper('yuzu_tags')->getConfig('yuzu_tags/advanced/in_email');
 
         $response = array(
             'version' => $config['version'],
@@ -31,11 +28,8 @@ class Yuzu_Tags_CheckController extends Mage_Core_Controller_Front_Action
             'merchant_key' => ($merchantKey) ? true : false,
             'secret_key' => ($secretKey) ? true : false,
             'enabled' => ($enabled) ? true : false,
-            'in_checkout' => ($inCheckout) ? true : false,
-			'in_order_detail' => ($inOrderDetail) ? true : false,
-			'email_order' => ($emailOrder) ? true : false,
-			'email_invoice' => ($emailInvoice) ? true : false,
-			'email_shipment' => ($emailShipment) ? true : false,
+            'monetize' => ($monetize) ? true : false,
+            'in_email' => ($inEmail) ? true : false,
         );
 
         $this->getResponse()->setHeader('Content-type', 'application/json');

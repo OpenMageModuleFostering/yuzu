@@ -17,4 +17,9 @@ class Yuzu_Tags_Helper_Data extends Mage_Core_Helper_Abstract
         }
         return Mage::getStoreConfig($key, $store);
     }
+
+    public function setConfig($key, $value)
+    {
+        Mage::getModel('core/config')->saveConfig($key, $value);
+    }
 }
