@@ -24,6 +24,7 @@ class Yuzu_Tags_CheckController extends Mage_Core_Controller_Front_Action
 
         $response = array(
             'version' => $config['version'],
+            'date' => time(),
             'mage_version' => Mage::getVersion(),
             'php_version' => phpversion(),
             'merchant_key' => ($merchantKey) ? true : false,
