@@ -20,6 +20,11 @@ abstract class Yuzu_Tags_Block_Abstract extends Mage_Core_Block_Template
         return Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/merchant_key');
     }
 
+    public function isMonetize()
+    {
+        return Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/monetize');
+    }
+
     public function getApiUrl()
     {
         return Mage::helper('yuzu_tags')->getConfig('yuzu_tags/general/tag_url_collect');

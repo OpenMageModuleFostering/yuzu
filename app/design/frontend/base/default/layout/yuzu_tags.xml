@@ -20,7 +20,7 @@
     <checkout_onepage_success>
         <block type="yuzu_tags/checkout" name="yuzu_wrap" template="yuzu_tags/iframewrap.phtml"/>
         <reference name="content">
-            <action method="append" ifconfig="yuzu_tags/general/monetize"><block>yuzu_wrap</block></action>
+            <action method="append"><block>yuzu_wrap</block></action>
         </reference>
     </checkout_onepage_success>
 

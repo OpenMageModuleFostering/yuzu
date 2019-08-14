@@ -1,9 +1,12 @@
 <?php if ($this->isEnabled()): ?>
 
+	<?php if ($this->isMonetize()): ?>
+		<div id="yuzuwrap"></div>
+	<?php endif; ?>
+
     <?php $event = $this->getEvent(); ?>
 
 	<?php if ($event): ?>
-		<div id="yuzuwrap"></div>
         <script type="text/javascript">
            Yuzu.addEvent("order", <?php echo $event; ?>);
         </script>
